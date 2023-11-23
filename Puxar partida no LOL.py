@@ -255,68 +255,83 @@ def LOL():
     def KeepSearchingImageAndClickWhenFound(image):
         # Localize the position of "image" on the screen
         image_path_image = os.path.join("Images", image)
-
+        
         while True:
-            image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
+            try:
+                image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
 
-            # If the image is found, click on it
-            if image_position_image:
-                image_center = pyautogui.center(image_position_image)
-                pyautogui.click(image_center.x, image_center.y)
-                if image=="Aceitar.png": time.sleep(5)
-                break
+                # If the image is found, click on it
+                if image_position_image:
+                    print(image)
+                    image_center = pyautogui.center(image_position_image)
+                    pyautogui.click(image_center.x, image_center.y)
+                    if image=="Aceitar.png": time.sleep(5)
+                    break
 
-            # Wait a short time before trying again
-            time.sleep(0.5)
+                # Wait a short time before trying again
+                time.sleep(0.5)
+
+            except: None
 
     def SearchImageForXSecondsAndClickWhenFound(image, seconds):
         # Localize the position of "image" on the screen
         image_path_image = os.path.join("Images", image)
         start_time = time.time()
-
+     
         while (time.time() - start_time) < seconds:  # Keep searching for X seconds tops
-            image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
+            try:
+                image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
 
-            # If the image is found, click on it
-            if image_position_image:
-                image_center = pyautogui.center(image_position_image)
-                pyautogui.click(image_center.x, image_center.y)
-                return 23
+                # If the image is found, click on it
+                if image_position_image:
+                    print(image)
+                    image_center = pyautogui.center(image_position_image)
+                    pyautogui.click(image_center.x, image_center.y)
+                    return 23
 
-            # Wait a short time before trying again
-            time.sleep(0.5)
+                # Wait a short time before trying again
+                time.sleep(0.5)
+
+            except: None
 
     def Role1(image):
         # Localize the position of "Encontrar partida" on the screen
         image_path_Encontrar_partida = os.path.join("Images", "Encontrar partida.png")
 
         while True:
-            image_position_Encontrar_partida = pyautogui.locateOnScreen(image_path_Encontrar_partida, confidence=0.8)
+            try:
+                image_position_Encontrar_partida = pyautogui.locateOnScreen(image_path_Encontrar_partida, confidence=0.8)
 
-            # If the image is found, click on it with x adjusted
-            if image_position_Encontrar_partida:
-                image_center = pyautogui.center(image_position_Encontrar_partida)
-                x_adjusted = image_center.x + 155  # Ajuste a coordenada x aqui
-                pyautogui.click(x_adjusted, image_center.y)
-                break
+                # If the image is found, click on it with x adjusted
+                if image_position_Encontrar_partida:
+                    image_center = pyautogui.center(image_position_Encontrar_partida)
+                    x_adjusted = image_center.x + 155  # Ajuste a coordenada x aqui
+                    pyautogui.click(x_adjusted, image_center.y)
+                    break
 
-            # Wait a short time before trying again
-            time.sleep(0.5)
+                # Wait a short time before trying again
+                time.sleep(0.5)
+
+            except: None
 
         # Localize the position of "image" on the screen
         image_path_image = os.path.join("Images", image + ".png")
 
         while True:
-            image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
+            try:
+                image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
 
-            # If the image is found, click on it
-            if image_position_image:
-                image_center = pyautogui.center(image_position_image)
-                pyautogui.click(image_center.x, image_center.y)
-                break
+                # If the image is found, click on it
+                if image_position_image:
+                    image_center = pyautogui.center(image_position_image)
+                    pyautogui.click(image_center.x, image_center.y)
+                    break
 
-            # Wait a short time before trying again
-            time.sleep(0.5)
+                # Wait a short time before trying again
+                time.sleep(0.5)
+
+            except: None
+
         time.sleep(0.5)
         if (image_path_image == os.path.join("Images", "Preencher" + ".png")):
             return 23
@@ -326,36 +341,47 @@ def LOL():
         image_path_Encontrar_partida = os.path.join("Images", "Encontrar partida.png")
 
         while True:
-            image_position_Encontrar_partida = pyautogui.locateOnScreen(image_path_Encontrar_partida, confidence=0.8)
+            try:
+                image_position_Encontrar_partida = pyautogui.locateOnScreen(image_path_Encontrar_partida, confidence=0.8)
 
-            # If the image is found, click on it with x adjusted
-            if image_position_Encontrar_partida:
-                image_center = pyautogui.center(image_position_Encontrar_partida)
-                x_adjusted = image_center.x + 200  # Ajuste a coordenada x aqui
-                pyautogui.click(x_adjusted, image_center.y)
-                break
+                # If the image is found, click on it with x adjusted
+                if image_position_Encontrar_partida:
+                    image_center = pyautogui.center(image_position_Encontrar_partida)
+                    x_adjusted = image_center.x + 200  # Ajuste a coordenada x aqui
+                    pyautogui.click(x_adjusted, image_center.y)
+                    break
 
-            # Wait a short time before trying again
-            time.sleep(0.5)
+                # Wait a short time before trying again
+                time.sleep(0.5)
+
+            except: None
 
         # Localize the position of "image" on the screen
         image_path_image = os.path.join("Images", image + ".png")
 
         while True:
-            image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
+            try:
+                image_position_image = pyautogui.locateOnScreen(image_path_image, confidence=0.8)
 
-            # If the image is found, click on it
-            if image_position_image:
-                image_center = pyautogui.center(image_position_image)
-                pyautogui.click(image_center.x, image_center.y)
-                break
+                # If the image is found, click on it
+                if image_position_image:
+                    image_center = pyautogui.center(image_position_image)
+                    pyautogui.click(image_center.x, image_center.y)
+                    break
 
-            # Wait a short time before trying again
-            time.sleep(0.5)
+                # Wait a short time before trying again
+                time.sleep(0.5)
+                
+            except: None
+
         time.sleep(0.5)
     
     def WhereToClick():
         if not game_mode=="Apenas auto aceitar":
+            if not [window for window in gw.getWindowsWithTitle("League of Legends") if window.title == "League of Legends"]:
+                # Wait until the window is fully open
+                while not [window for window in gw.getWindowsWithTitle("League of Legends") if window.title == "League of Legends"]:
+                    time.sleep(1)
             [window for window in gw.getWindowsWithTitle("League of Legends") if window.title == "League of Legends"][0].minimize()
             [window for window in gw.getWindowsWithTitle("League of Legends") if window.title == "League of Legends"][0].restore()
             KeepSearchingImageAndClickWhenFound("inicio.png")
