@@ -1,0 +1,5 @@
+PyAutoGUI
+Pillow
+opencv-python
+tk
+pyinstaller
