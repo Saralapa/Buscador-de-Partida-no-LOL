@@ -465,7 +465,7 @@ def LOL():
     border_label.pack(fill="x")
 
     # Textos dos botões
-    textos_botões1 = ["Escolha alternada", "Ranqueada solo duo", "ARAM", "Blitz do Nexus", "Apenas auto aceitar", "Arena"]
+    textos_botões1 = ["Escolha alternada", "Ranqueada solo duo", "ARAM", "Blitz do Nexus", "Arena", "Apenas auto aceitar"]
     textos_botões2 = ["Top", "Jungle", "Mid", "ADC", "Suporte", "Preencher"]
 
     frame_menu = tk.Frame(window, bg="#151515")
