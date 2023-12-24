@@ -105,7 +105,7 @@ def LOL():
         border_label.config(text="Escolha o modo de jogo")
         variable.set("Modo de jogo\nescolhido:")
         undo_button.config(text="Desfazer")
-        center_window(window, 375, 334)
+        center_window(window, 375, 375)
 
     #Tela de seleção de posição
     def role_selection():
@@ -201,7 +201,7 @@ def LOL():
             if game_mode == None:
                 variable.set("Selecione um modo de jogo!")
                 window.after(2000, lambda: variable.set("Modo de jogo\nescolhido:") if game_mode == None else None)
-            window.after(0, lambda: auto_aceitar() if game_mode == "ARAM" else role_selection() if game_mode is not None else None)
+            window.after(0, lambda: auto_aceitar() if game_mode == "ARAM" or game_mode == "Arena" else role_selection() if game_mode is not None else None)
         elif screen == "role selection":
             if (game_mode != "Blitz do Nexus" and (Role_1 != "Preencher" and Role_2 == None)) or (game_mode== "Blitz do Nexus" and Role_1==None):
                 variable.set("As duas roles devem\nser preenchidas!")
@@ -438,7 +438,7 @@ def LOL():
             KeepSearchingImageAndClickWhenFound(game_mode+".png")
             time.sleep(0.5)
             KeepSearchingImageAndClickWhenFound("Confirmar.png")
-            if game_mode!="ARAM":
+            if game_mode!="ARAM" and game_mode!="Arena":
                 if not Role1(Role_1)==23:
                     Role2(Role_2)
             KeepSearchingImageAndClickWhenFound("Encontrar partida.png")
@@ -465,7 +465,7 @@ def LOL():
     border_label.pack(fill="x")
 
     # Textos dos botões
-    textos_botões1 = ["Escolha alternada", "Ranqueada solo duo", "ARAM", "Blitz do Nexus", "Apenas auto aceitar"]
+    textos_botões1 = ["Escolha alternada", "Ranqueada solo duo", "ARAM", "Blitz do Nexus", "Apenas auto aceitar", "Arena"]
     textos_botões2 = ["Top", "Jungle", "Mid", "ADC", "Suporte", "Preencher"]
 
     frame_menu = tk.Frame(window, bg="#151515")
